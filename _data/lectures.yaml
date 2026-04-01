@@ -1,15 +1,5 @@
 -
-  date: 2025-03-31
-  title: NO LECTURE
-  slides: NA
-  readings:
-        -
-          title: 
-          url: 
-          authors: 
-
--
-  date: 2026-04-02
+  date: 2026-03-31
   title: Intro
   recording: 
   slides: intro.pdf
@@ -20,5 +10,310 @@
           title: "GET LAMP: The Text Adventure Documentary"
           length: 2 hours
           optional: true
-
+-
+  date: 2026-04-02
+  title: What are Agents?
+  slides: what_is_an_agent.pdf
+  readings:
+        -
+          title: AIMA Chapter 1
+          url: https://aima.cs.berkeley.edu/global-index.html
+          authors: Stuart Russell and Peter Norvig
+-
+  date: 2026-04-07
+  title: Simulated Environments and Reality
+  slides: simulations_and_reality.pdf
+  readings:
+        -
+          title: A Systematic Survey of Text Worlds as Embodied Natural Language Environments
+          url: https://aclanthology.org/2022.wordplay-1.1.pdf
+          authors: Peter A. Jansen
+        -
+          title: Action Castle
+          url: http://memento-mori.com/pdf/parsely-preview-n-play-edition
+          authors: Jared Sorensen
+-
+  date: 2026-04-09
+  title: How to Make a Simulation?
+  slides: how_to_make_a_simulation.pdf
+  readings:
+        -
+          title: Intro to PDDL
+          url: https://fareskalaboud.github.io/LearnPDDL/
+          authors: Fares Alaboud
+        -
+          title: Intro to Inform7
+          url: https://ganelson.github.io/inform-website/
+          authors: Graham Nelson
+        -
+          title: The Visible Zorker
+          url: https://blog.zarfhome.com/2025/01/the-visible-zorker
+          authors: Andrew Plotkin
+        -
+          authors: Jason Scott
+          url: https://www.youtube.com/watch?v=LRhbcDzbGSU
+          title: "GET LAMP: The Text Adventure Documentary"
+          length: 2 hours
+          optional: true
+-
+  date: 2026-04-14
+  title: HW0 Due
+  type: homework
+# -
+#   date: 2026-04-14
+#   title: Search for Planning in Simulations
+#   slides: search_for_planning_in_simulations.pdf
+#   readings:
+#         -
+#           title: Intro to STRIPS
+#           url: https://www.primaryobjects.com/2015/11/06/artificial-intelligence-planning-with-strips-a-gentle-introduction/
+#           authors: Kory Becker
+#         -
+#           title: AIMA Chapter 11
+#           url: https://aima.cs.berkeley.edu/newchap11.pdf
+#           authors: Stuart Russell and Peter Norvig
+#         -
+#           title: RL Book Chapter 8.1, 8.9-8.11
+#           url: http://incompleteideas.net/book/RLbook2020.pdf
+#           authors: Rich Sutton and Andrew Barto
+# -
+#   date: 2026-04-16
+#   title: Finalize Project Groups
+#   type: deadline
+# -
+#   date: 2026-04-16
+#   title: Classical Control, Pre-Deep Learning
+#   slides: classical_control_pre_deep_learning.pdf
+#   readings:
+#         -
+#           title: RL Book Chapter 4, 5
+#           url: http://incompleteideas.net/book/RLbook2020.pdf
+#           authors: Rich Sutton and Andrew Barto
+# -
+#   date: 2026-04-21
+#   title: Deep Reinforcement Learning, Pre-LLMs
+#   slides: deep_rl_pre_llms.pdf
+#   readings:
+#         -
+#           title: RL Book Chapter 6.1-6.5
+#           url: http://incompleteideas.net/book/RLbook2020.pdf
+#           authors: Rich Sutton and Andrew Barto
+#         -
+#           title: Playing Atari with Deep Reinforcement Learning
+#           url: https://arxiv.org/abs/1312.5602
+#           authors: Minh et al. 2013
+#         -
+#           title: (Nature version) Human-level control through deep reinforcement learning
+#           url: https://daiwk.github.io/assets/dqn.pdf
+#           authors: Minh et al. 2015
+#           optional: true
+# -
+#   date: 2026-04-23
+#   title: Reinforcement Learning and Search Combined
+#   slides: rl_search_combined.pdf
+#   readings:
+#         -
+#           title: (Alpha Zero) Mastering Chess and Shogi by Self-Play with a General Reinforcement Learning Algorithm
+#           url: https://arxiv.org/abs/1712.01815
+#           authors: Silver et al. 2017
+#         -
+#           title: How to Avoid Being Eaten by a Grue Structured Exploration Strategies for Textual Worlds
+#           url: https://arxiv.org/abs/2006.07409
+#           authors: Ammanabrolu et al. 2019
+#         -
+#           title: (Mu Zero) Mastering Atari, Go, Chess and Shogi by Planning with a Learned Model
+#           url: https://arxiv.org/abs/1911.08265
+#           authors: Schrittwieser et al. 2019
+#           optional: True
+# -
+#   date: 2026-04-28
+#   title: Project Pitches 1
+# -
+#   date: 2026-04-30
+#   title: Project Pitches 2
+# -
+#   date: 2026-04-28
+#   title: HW1 Due
+#   type: homework
+# -
+#   date: 2026-05-03
+#   title: Project Pitch Slide Decks Due
+#   type: deadline
+# -
+#   date: 2026-05-05
+#   title: Attention and Language Modeling
+#   slides: attention_and_language_modeling.pdf
+#   readings:
+#         -
+#           title: Attention is All You Need
+#           url: https://arxiv.org/abs/1706.03762
+#           authors: Vaswani et al.
+#         -
+#           title: The Illustrated Transformer
+#           url: https://jalammar.github.io/illustrated-transformer/
+#           authors: Jay Alammar
+#         -
+#           title: Language Models are Few Shot Learners
+#           url: https://arxiv.org/abs/2005.14165
+#           authors: Brown et al.
+# -
+#   date: 2026-05-07
+#   title: RL for Language Agents Pt 1 (Online RL for NLP, RLHF)
+#   slides: rl_for_language_pt1.pdf
+#   readings:
+#         -
+#           title: RL Book Chapter 13
+#           url: http://incompleteideas.net/book/RLbook2020.pdf
+#           authors: Rich Sutton and Andrew Barto
+#         -
+#           title: Is Reinforcement Learning (Not) for Natural Language Processing? Benchmarks, Baselines, and Building Blocks for Natural Language Policy Optimization
+#           url: https://github.com/allenai/RL4LMs
+#           authors: Ramamurthy*, Ammanabrolu* et al.
+#         -
+#           title: Training Language Models to Follow Instructions with Human Feedback
+#           url: https://arxiv.org/abs/2203.02155
+#           authors: Ouyang et al.
+# -
+#   date: 2026-05-12
+#   title: HW2 Due
+#   type: homework
+# -
+#   date: 2026-05-12
+#   title: RL for Language Agents Pt 2 (Rewards and Closed Form Methods)
+#   slides: rl_for_language_pt2.pdf
+#   readings:
+#         -
+#           title: Let's Verify Step by Step
+#           url: https://arxiv.org/abs/2305.20050
+#           authors: Lightman et al.
+#         -
+#           title: Fine-Grained Human Feedback Gives Better Rewards for Language Model Training
+#           url: https://arxiv.org/abs/2306.01693
+#           authors: Wu et al.
+#         -
+#           title: Direct Preference Optimization Your Language Model is Secretly a Reward Model
+#           url: https://arxiv.org/abs/2305.18290
+#           authors: Rafailov et al.
+# -
+#   date: 2026-05-14
+#   title: Prompt Optimization
+#   slides: prompt_optimization.pdf
+#   readings:
+#         -
+#           title: ReAct Synergizing Reasoning and Acting in Language Models
+#           url: https://arxiv.org/abs/2210.03629
+#           authors: Yao et al.
+#         -
+#           title: (RAG) Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks
+#           url: https://arxiv.org/abs/2005.11401
+#           authors: Lewis et al.
+#         -
+#           title: Building Effective Agents
+#           url: https://www.anthropic.com/research/building-effective-agents
+#           authors: Anthropic
+#         -
+#           title: DsPy Compiling Declarative Language Model Calls into Self-Improving Pipelines
+#           url: https://arxiv.org/abs/2310.03714
+#           authors: Khattab et al.
+#           optional: True
+# -
+#   date: 2026-05-19
+#   title: Neurosymbolic Tool Use Methods and Agent Reasoning
+#   slides: neurosymbolic_tool_use.pdf
+#   readings:
+#         -
+#           title: Behavior Cloned Transformers are Neurosymbolic Reasoners
+#           url: https://arxiv.org/abs/2210.07382
+#           authors: Wang et al.
+#         -
+#           title: LLM+P Empowering Large Language Models with Optimal Planning Proficiency
+#           url: https://arxiv.org/abs/2304.11477
+#           authors: Liu et al.
+#         -
+#           title: Gorilla Large Language Model Connected with Massive APIs
+#           url: https://gorilla.cs.berkeley.edu/
+#           authors: Patil et al.
+#         -
+#           title: PlanBench An Extensible Benchmark for Evaluating Large Language Models on Planning and Reasoning about Change
+#           url: https://arxiv.org/abs/2206.10498
+#           authors: Valmeekam et al.
+# -
+#   date: 2026-05-21
+#   title: Agent Reasoning and Inference Time Methods
+#   slides: inf_scaling.pdf
+#   readings:
+#         -
+#           title: Why we think
+#           url: https://lilianweng.github.io/posts/2025-05-01-thinking/
+#           authors: Lilian Weng
+#         -
+#           title: Quiet-STaR Language Models Can Teach Themselves to Think Before Speaking
+#           url: https://arxiv.org/abs/2403.09629
+#           authors: Zelikman et al.
+#         -
+#           title: Scaling LLM Test-Time Compute Optimally can be More Effective than Scaling Model Parameters
+#           url: https://arxiv.org/abs/2408.03314
+#           authors: Snell et al.
+#         -
+#           title: Stream of Search (SoS) Learning to Search in Language
+#           url: https://arxiv.org/abs/2404.03683
+#           authors: Gandhi et al.
+# -
+#   date: 2026-05-26
+#   title: HW3 Due
+#   type: homework
+# -
+#   date: 2026-05-26
+#   title: Multi-Agent Systems and Human-AI Collaboration
+#   slides: multi_agent.pdf
+#   readings:
+#         -
+#           title: LIGHT - A large-scale crowdsourced fantasy text game
+#           url: https://parl.ai/projects/light
+#           authors: Urbanek et al.
+#         -
+#           title: Generative Agents Interactive Simulacra of Human Behavior
+#           url: https://arxiv.org/abs/2304.03442
+#           authors: Park et al.
+#         -
+#           title: A Survey on Human-AI Teaming with Large Pre-Trained Models
+#           url: https://arxiv.org/abs/2403.04931
+#           authors: Vats et al.
+# -
+#   date: 2026-05-28
+#   title: Agent Safety, Security, and Legality
+#   slides: agent_safety.pdf
+#   readings:
+#         -
+#           title: Evaluating and Mitigating Discrimination in Language Model Decisions
+#           url: https://arxiv.org/abs/2312.03689
+#           authors: Tamkin et al.
+#         -
+#           title: Responsible AI Agents
+#           url: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5147666
+#           authors: Desai and Riedl
+#         -
+#           title: Computing Optimization-Based Prompt Injections Against Closed-Weights Models By Misusing a Fine-Tuning API
+#           url: https://arxiv.org/abs/2501.09798
+#           authors: Labunets et al.
+#         -
+#           title: Measuring Progress on Scalable Oversight for Large Language Models
+#           url: https://arxiv.org/abs/2211.03540
+#           authors: Bowman et al.
+#         -
+#           title: Creativity Support in the Age of Large Language Models An Empirical Study Involving Emerging Writers
+#           url: https://arxiv.org/abs/2309.12570
+#           authors: Chakrabarty et al.
+#           optional: true
+#         -
+#           title: Aligning to Social Norms and Values in Interactive Narratives
+#           url: https://arxiv.org/abs/2205.01975
+#           authors: Ammanabrolu et al.
+#           optional: true
+# -
+#   date: 2026-06-02
+#   title: Final Project Presentations 1
+# -
+#   date: 2026-06-04
+#   title: Final Project Presentations 2
 
