@@ -56,7 +56,7 @@
           length: 2 hours
           optional: true
 -
-  date: 2026-04-14
+  date: 2026-04-15
   title: HW0 Due
   type: homework
 -
@@ -82,7 +82,7 @@
   type: deadline
 -
   date: 2026-04-16
-  title: Classical Control, Pre-Deep Learning
+  title: Classical Control, Pre-Deep Learningcccccdbedfeuibjbdrnuhcdgtdbje
   slides: classical_control_pre_deep_learning.pdf
   readings:
         -
