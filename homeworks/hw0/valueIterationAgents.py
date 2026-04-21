@@ -189,8 +189,37 @@ class ValueIterationAgent(Agent):
           Run the value iteration algorithm. Note that in standard
           value iteration, V_k+1(...) depends on V_k(...)'s.
         """
-        "*** YOUR CODE HERE ***"
-        util.raiseNotDefined()
+        #for each iteration k...
+        for k in range(self.iterations):
+            #Determine V_k each possible state s, need to store V_k-1 (old v) first
+            v_old = self.values.copy() #V_k-1
+            v_new = util.Counter() #V_k
+            S = self.mdp.getStates()
+            for s in S:
+                if self.mdp.isTerminal(s): #first check if s is terminal state
+                    v_new[s] = 0
+                    continue
+                #find V(s) using Bellman eq.
+                action_rewards = []
+                A = self.mdp.getPossibleActions(s)
+                for a in A: 
+                    #find expected reward for each possible a from s by summing discounted future rewards from a -> s'
+                    t_matrix = self.mdp.getTransitionStatesAndProbs(s,a)
+                    expected = 0
+                    for s_prime in t_matrix:
+                        #discount future reward summation
+                        prob = s_prime[1]
+                        reward = self.mdp.getReward(s,a,s_prime[0])
+                        v_s_prime = v_old[s_prime[0]] * self.discount #multiply value of s prime by discount as per bellman
+                        expected += prob*(reward + v_s_prime)
+                    action_rewards.append(expected)
+                #expected reward now populated, V(s) = max(action_rewards)
+                v_new[s] = max(action_rewards)
+            
+            #iteration k complete, updated values V w/ new V_k
+            self.values = v_new.copy()
+        #complete after k iterations
+        return 
 
     def getValue(self, state):
         """
@@ -203,8 +232,16 @@ class ValueIterationAgent(Agent):
           Compute the Q-value of action in state from the
           value function stored in self.values.
         """
-        "*** YOUR CODE HERE ***"
-        util.raiseNotDefined()
+        #Probability of selecting action a in state s (stochastic) returns real number Q
+        t_matrix = self.mdp.getTransitionStatesAndProbs(state,action)
+        qvalue = 0
+        #Structurally almost exactly the same as the expected reward eq. but using current V 
+        for s_prime in t_matrix:
+            prob = s_prime[1]
+            reward = self.mdp.getReward(state,action,s_prime[0])
+            v_s_prime = self.values[s_prime[0]] * self.discount #Use self.values since this is using current value function
+            qvalue += prob*(reward + v_s_prime)
+        return qvalue
 
     def computeActionFromValues(self, state):
         """
@@ -215,8 +252,16 @@ class ValueIterationAgent(Agent):
           there are no legal actions, which is the case at the
           terminal state, you should return None.
         """
-        "*** YOUR CODE HERE ***"
-        util.raiseNotDefined()
+        #Given state s what is the best action a (deterministic), returns policy (action a)
+        if self.mdp.isTerminal(state): 
+            return None #check for terminal state
+        qvalues = {} #dict of a:qvalue(a)
+        A = self.mdp.getPossibleActions(state)
+        #compute Q value of each possible a from s 
+        for a in A:
+            q_a = self.computeQValueFromValues(state,a)
+            qvalues[a] = q_a
+        return max(qvalues,key=qvalues.get) #ties will be broken by selecting first action max encounters
 
     def getPolicy(self, state):
         return self.computeActionFromValues(state)

@@ -90,17 +90,90 @@ def depthFirstSearch(problem: SearchProblem) -> List[Directions]:
     print("Start's successors:", problem.getSuccessors(problem.getStartState()))
     """
     "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    #test commands to understand:
+    #print("Start:", problem.getStartState()) #(5,5)
+    #print("Is the start a goal?", problem.isGoalState(problem.getStartState())) #False ofc since we havent moved
+    #print("Start's successors:", problem.getSuccessors(problem.getStartState())) #list of triples of possible moves i.e (5,4) south 1
+    #DFS:
+    stack = util.Stack()
+    visited = []
+
+    stack.push([problem.getStartState(),[]]) #current coordinate + path to that coordinate []
+
+    while not stack.isEmpty():
+        (node,path) = stack.pop() #node should be of form (x,y)
+        #print(node)
+        #print(path)
+        if node in visited:
+            continue
+        if problem.isGoalState(node):
+                path.reverse() #reverse list for proper navigation order
+                return path
+        visited.append(node)   
+
+        #traverse all edges
+        successors = problem.getSuccessors(node)
+        size = len(successors)
+        for i in range(size-1,-1,-1):
+            v = successors[i]
+            v_node = v[0]
+            if v_node not in visited:
+                stack.push([v_node,[v[1]]+path])
 
 def breadthFirstSearch(problem: SearchProblem) -> List[Directions]:
     """Search the shallowest nodes in the search tree first."""
-    "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    queue = util.Queue()
+    visited = []
+
+    queue.push([problem.getStartState(),[]]) #[current coordinate, path to current]
+
+    while not queue.isEmpty():
+        (node,path) = queue.pop() #node should be of form (x,y)
+        #print(node)
+        #print(path)
+        if node in visited:
+            continue
+        if problem.isGoalState(node):
+                path.reverse() #reverse list for proper navigation order
+                return path
+        visited.append(node)   
+
+        #traverse all edges
+        successors = problem.getSuccessors(node)
+        size = len(successors)
+        for i in range(size-1,-1,-1):
+            v = successors[i]
+            v_node = v[0]
+            if v_node not in visited:
+                queue.push([v_node,[v[1]]+path])
+    
 
 def uniformCostSearch(problem: SearchProblem) -> List[Directions]:
     """Search the node of least total cost first."""
-    "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    #print("Start's successors:", problem.getSuccessors(problem.getStartState()))
+    pqueue = util.PriorityQueue()
+    visited = []
+    #tracking TOTAL path cost not just cost of each move so we need to keep track of 3 things now
+    pqueue.push([problem.getStartState(),[],0],0) #[current,path to current,cost of path] + priority
+
+    while not pqueue.isEmpty():
+        (node,path,path_cost) = pqueue.pop() #node should be of form (x,y)
+        if node in visited:
+            continue
+        if problem.isGoalState(node):
+                path.reverse() #reverse list for proper navigation order
+                return path
+        visited.append(node)   
+
+        #traverse all edges
+        successors = problem.getSuccessors(node)
+        size = len(successors)
+        for i in range(size-1,-1,-1):
+            v = successors[i]
+            v_node = v[0]
+            cost = v[2] #priority by cost
+            if v_node not in visited:
+                pqueue.update([v_node,[v[1]]+path,cost+path_cost],cost+path_cost)
 
 def nullHeuristic(state, problem=None) -> float:
     """
@@ -111,8 +184,32 @@ def nullHeuristic(state, problem=None) -> float:
 
 def aStarSearch(problem: SearchProblem, heuristic=nullHeuristic) -> List[Directions]:
     """Search the node that has the lowest combined cost and heuristic first."""
-    "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    pqueue = util.PriorityQueue()
+    best_cost = {problem.getStartState(): 0} #Need to swap visited for best cost to avoid popping nodes inadvertantley 
+    start_h = heuristic(problem.getStartState(),problem)
+    pqueue.push([problem.getStartState(),[],0],start_h) #[current,path to current,cost of path] + priority
+
+    while not pqueue.isEmpty():
+        #path_cost is cost from start to current node
+        (node,path,path_cost) = pqueue.pop()
+
+        if path_cost > best_cost[node]: #check if we prev found better path
+            continue
+        if problem.isGoalState(node):
+                path.reverse() #reverse list for proper navigation order
+                return path 
+        #traverse all edges
+        successors = problem.getSuccessors(node)
+        size = len(successors)
+        for i in range(size-1,-1,-1):
+            v = successors[i]
+            v_node = v[0]
+            cost = v[2] #extract cost of moving to node i
+            new_cost = cost+path_cost #g(n)
+            priority = new_cost + heuristic(v_node,problem) #priority = new_cost + heuristic(n) (f(n) = g(n) + h(n))
+            if v_node not in best_cost or new_cost < best_cost[v_node]: #replaces visited functionality
+                best_cost[v_node] = new_cost
+                pqueue.push([v_node,[v[1]]+path,new_cost],priority)
 
 # Abbreviations
 bfs = breadthFirstSearch
